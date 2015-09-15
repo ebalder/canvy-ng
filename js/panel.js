@@ -8,6 +8,12 @@ ng.module('canvy')
 		template: require('../templates/canvy-panel.html'),
 		transclude: true,
 		restrict: "EA",
+		require: "^canvyLayout",
+		controller: function($scope){
+		},
+		link: function($scope, el, attrs, canvyLayout){
+			canvyLayout.print('asdfasdf');
+		}
 	}
 })
 	

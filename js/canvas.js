@@ -9,6 +9,11 @@ ng.module('canvy', [])
 		template: require('../templates/canvy-layout.html'),	
 		transclude: true,
 		restrict: "EA",
+		controller: function(){
+			this.print = function(msg){
+				console.log('------', msg);
+			}
+		}
 	}
 })
 
