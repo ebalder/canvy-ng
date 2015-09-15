@@ -31,4 +31,4 @@ gulp.task('js', function(){
 		.pipe(gulp.dest('./build'));
 })
 
-var watcher = gulp.watch('js/*.js', ['js'])
+var watcher = gulp.watch(['js/*.js', 'templates/*'], ['js'])
