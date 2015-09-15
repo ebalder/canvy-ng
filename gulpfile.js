@@ -9,15 +9,15 @@ var assign = require('lodash.assign')
 var stringify = require('stringify')
 
 var opts = assign({
+	debug: true,
+	transform: stringify({
+		extensions: ['.html'],
+		minify: true
+	}),
 	entries: ['./js/canvas.js'],
-	debug: true
 }, watchify.args)
 
-var b = watchify(watchify(
-	browserify()
-	.transform(stringify(['.html']))
-	.add('./js/canvas.js', opts)
-))
+var b = watchify(watchify(browserify(opts)))
 
 gulp.task('default', ['js'])
 
@@ -31,4 +31,4 @@ gulp.task('js', function(){
 		.pipe(gulp.dest('./build'));
 })
 
-var watcher = gulp.watch('*.js', ['js'])
+var watcher = gulp.watch('js/*.js', ['js'])
