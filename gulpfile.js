@@ -6,14 +6,9 @@ var buffer = require('vinyl-buffer')
 var gutil = require('gulp-util')
 var sourcemaps = require('gulp-sourcemaps')
 var assign = require('lodash.assign')
-var stringify = require('stringify')
 
 var opts = assign({
 	debug: true,
-	transform: stringify({
-		extensions: ['.html'],
-		minify: true
-	}),
 	entries: ['./js/canvas.js'],
 }, watchify.args)
 

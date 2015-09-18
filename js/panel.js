@@ -7,6 +7,9 @@ ng.module('canvy')
 	return {
 		template: require('../templates/canvy-panel.html'),
 		transclude: true,
+		scope: {
+			
+		},
 		restrict: "EA",
 		require: "^canvyLayout",
 		controller: function($scope){
@@ -16,4 +19,5 @@ ng.module('canvy')
 		}
 	}
 })
-	
+
+var item = require('./item')

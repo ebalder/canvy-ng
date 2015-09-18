@@ -1,18 +1,44 @@
 {
-  "name": "canvy",
-  "version": "0.0.1",
-  "description": "For training purposes: Angular module for interactive canvases",
-  "author": "Elsa Balderrama <mail@ebalderrama.com>",
-  "dependencies": {
-    "angular": "^1.4.5",
-    "browserify": "^11.1.0",
-    "gulp": "^3.9.0",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-util": "^3.0.6",
-    "lodash.assign": "^3.2.0",
-    "stringify": "^3.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.4.0"
-  }
+	"name": "canvy",
+	"version": "0.0.1",
+	"description": "For training purposes: Angular module for interactive canvases",
+	"author": "Elsa Balderrama <mail@ebalderrama.com>",
+	"dependencies": {
+	"angular": "^1.4.5",
+	"browserify": "^11.1.0",
+	"gulp": "^3.9.0",
+	"gulp-sourcemaps": "^1.5.2",
+	"gulp-util": "^3.0.6",
+	"jquery": "^2.1.4",
+	"jquery-ui": "^1.10.5",
+	"lodash.assign": "^3.2.0",
+	"stringify": "^3.1.0",
+	"vinyl-buffer": "^1.0.0",
+	"vinyl-source-stream": "^1.1.0",
+	"watchify": "^3.4.0"
+	},
+	"browserify": {
+		"transform": [
+			"browserify-shim",
+			"stringify"
+		]
+	},
+	"browser": {
+		"jquery-ui": "./node_modules/jquery-ui/jquery-ui.js",
+		"sortable": "./node_modules/jquery-ui/sortable.js",
+		"draggable": "./node_modules/jquery-ui/draggable.js",
+		"resizeable": "./node_modules/jquery-ui/reziseable.js",
+		"dropable": "./node_modules/jquery-ui/dropable.js"
+	},
+	"browserify-shim": {
+		"jquery": "$",
+		"jquery-ui": {
+			"depends": ["jquery"],
+			"exports": "jQuery"
+		}
+	},
+	"stringify": {
+		"extensions": [".html"],
+		"minify": true
+	}
 }
