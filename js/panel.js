@@ -1,6 +1,8 @@
 'use strict';
 
 var ng = require('angular')
+var $ = require('jquery')
+require('sortable')
 
 ng.module('canvy')
 .directive('canvyPanel', function(){
@@ -12,9 +14,15 @@ ng.module('canvy')
 		},
 		restrict: "EA",
 		require: "^canvyLayout",
+		replace: true,
 		controller: function($scope){
 		},
 		link: function($scope, el, attrs, canvyLayout){
+			var $el = $(el);
+			$el.sortable({
+				revert: true,
+				connectWith: '.canvy-panel'
+			});
 			canvyLayout.print('asdfasdf');
 		}
 	}

@@ -8,6 +8,7 @@ ng.module('canvy', [])
 		template: require('../templates/canvy-layout.html'),	
 		transclude: true,
 		restrict: "EA",
+		replace: true,
 		controller: function(){
 			this.print = function(msg){
 				console.log('------', msg);
