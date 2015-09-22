@@ -17,7 +17,6 @@ ng.module('canvy')
 		replace: true,
 		scope: false,
 		controller: function($scope) {
-			
 		},
 		link: function($scope, el, attrs, layout){
 			var $el = $(el);
@@ -25,7 +24,15 @@ ng.module('canvy')
 				revert: true,
 				connectWith: '.canvy-panel',
 			})
-			.on('sortstop', function(ev, $el){
+			.on('sortstop', function(ev, ui){
+				var oldIndex = $(ui.item).index();
+				var newIndex = $(ui.placeholder).index();
+				if(ev.target = ui.item.parent()){
+					var item = $scope.panel.items.splice(oldIndex, 1);
+					$scope.panel.items.splice(newIndex, 0, item[0]);	
+					console.log('asdf', $scope.panel.items);
+					$scope.$apply();
+				}	
 			});
 		}
 	}
