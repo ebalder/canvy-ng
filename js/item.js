@@ -11,9 +11,13 @@ ng.module('canvy')
 		transclude: true,
 		require: '^canvyPanel',
 		template: require('../templates/canvy-item.html'),
-		link: function($s, el, attrs){
+		controller: function($scope){
+		},
+		link: function(scope, el, attrs, panel){
 			var $el = $(el);
-			$el.text(attrs.name);
+			scope.index = $el.index();
+			el.attr('item', scope.item);	
+			el.attr('index', scope.index);
 		}
 	}
 })

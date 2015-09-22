@@ -9,7 +9,7 @@ var assign = require('lodash.assign')
 
 var opts = assign({
 	debug: true,
-	entries: ['./js/canvas.js'],
+	entries: ['./js/canvas.js', './ignore/test.js'],
 }, watchify.args)
 
 var b = watchify(watchify(browserify(opts)))

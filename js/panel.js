@@ -15,15 +15,18 @@ ng.module('canvy')
 		restrict: "EA",
 		require: "^canvyLayout",
 		replace: true,
-		controller: function($scope){
+		scope: false,
+		controller: function($scope) {
+			
 		},
-		link: function($scope, el, attrs, canvyLayout){
+		link: function($scope, el, attrs, layout){
 			var $el = $(el);
 			$el.sortable({
 				revert: true,
-				connectWith: '.canvy-panel'
+				connectWith: '.canvy-panel',
+			})
+			.on('sortstop', function(ev, $el){
 			});
-			canvyLayout.print('asdfasdf');
 		}
 	}
 })

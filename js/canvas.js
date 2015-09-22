@@ -9,10 +9,10 @@ ng.module('canvy', [])
 		transclude: true,
 		restrict: "EA",
 		replace: true,
-		controller: function(){
-			this.print = function(msg){
-				console.log('------', msg);
-			}
+		controller: function($scope){
+			
+		},
+		link: function(scope, el, attrs){
 		}
 	}
 })
