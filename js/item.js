@@ -17,7 +17,8 @@ ng.module('canvy')
 		},
 		link: function($scope, el, attrs, panel){
 			var $el = $(el);
-			$scope.item.index = $el.index();
+			el.item = $scope.item;
+			$el.css({"background-color": $scope.item.color});
 		}
 	}
 })
