@@ -19,8 +19,11 @@ ng.module('canvy')
 		controller: function($scope) {
 		},
 		link: function($scope, el, attrs, layout){
-			var $el = $(el);
-			el[0].panel = $scope.panel;
+			var $el = $(el); //required for jqueryUI
+			var panel = $scope.panel;
+			layout = $scope.$parent; //ToDo: why is layout empty?
+			var unit = layout.data.unit.map(function(curr){return curr*100});
+			el[0].panel = panel;
 			var arr = $el.sortable({
 				revert: true,
 				helper: 'clone',
@@ -28,6 +31,17 @@ ng.module('canvy')
 			})
 			.on('sortstop', swapItem)
 			.on('sortstart', setInitialIndex);
+
+			$el.css({
+				position: 'absolute',
+				border: 'solid',
+				"box-sizing": 'border-box',
+				top: (unit[1] * panel.upperLeft[1]) +'%',
+				left: (unit[0] * panel.upperLeft[0]) +'%',
+				width: (unit[0] * panel.area[0]) +'%',
+				height: (unit[1] * panel.area[1]) +'%'
+			});
+
 		}
 	}
 })
