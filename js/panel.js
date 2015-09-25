@@ -21,25 +21,28 @@ ng.module('canvy')
 		link: function($scope, el, attrs, layout){
 			var $el = $(el);
 			el[0].panel = $scope.panel;
-			$el.sortable({
+			var arr = $el.sortable({
 				revert: true,
+				helper: 'clone',
 				connectWith: '.canvy-panel',
 			})
-			.on('sortbeforestop', swapItem)
-			.on('sortupdate', function(ev){
-				console.log('--', $scope.panel.items)
-			})
+			.on('sortstop', swapItem)
+			.on('sortstart', setInitialIndex);
 		}
 	}
 })
 
+function setInitialIndex(ev, ui) {
+	ui.item[0].initial = ui.item.index();
+}
+
 function swapItem (ev, ui){
-	var src = ui.item.parent()[0].panel;
-	var dest = ui.placeholder.parent()[0].panel;
-	var oldIndex = ui.item.index() -1;
-	var newIndex= ui.placeholder.index() -1;
+	var src = ev.target.panel;
+	var dest = ui.item.parent()[0].panel;
+	
+	var oldIndex = ui.item[0].initial;
+	var newIndex= ui.item.index();
 	var item = src.items.splice(oldIndex, 1);
-	console.log(item);
 	dest.items.splice(newIndex, 0, item[0]);	
 }
 
