@@ -13,9 +13,11 @@ ng.module('canvy', [])
 			
 		},
 		link: function(scope, el, attrs){
+			
 		}
 	}
 })
 
 var panel = require('./panel')
+var editor = require('./editor')
 
