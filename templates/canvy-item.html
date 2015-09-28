@@ -1,11 +1,8 @@
-<li class="canvy-item" ng-init="editing = false" 
-	ng-dblclick="setEdit">
+<li class="canvy-item" ng-init="editing = false"> 
 
-	{{item.name}}
-	<input type="text" class="canvy-item-name-input" 
-		ng-model="item.name" 
-		ng-blur="editing = false" 
-		ng-show="editing"/>
+	<input type="text" class="canvy-item-name-input"
+		ng-model="item.name"
+	> 
 	<div class="remove">
 		x	
 	</div>
