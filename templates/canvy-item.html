@@ -1,9 +1,14 @@
-<li class="canvy-item" ng-init="editing = false"> 
+<li class="canvy-item" ng-init="editing = false"
+	ng-dblclick="editing = true"	
+	ng-activate="editing" > 
 
 	<input type="text" class="canvy-item-name-input"
 		ng-model="item.name"
-	> 
-	<div class="remove">
-		x	
+		ng-blur="editing = false"
+		ng-keypress="enter($event)"
+		disabled>
+	<div class="overlay"> </div>
+	<div class="remove" ng-click="destroy()">
+		Xx	
 	</div>
 </li>

@@ -42,6 +42,10 @@ ng.module('canvy')
 				height: (unit[1] * panel.area[1]) +'%'
 			});
 
+			$scope.removeItem = function(index){
+				delete $scope.panel.items[index];
+			}
+
 		}
 	}
 })
