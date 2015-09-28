@@ -1,0 +1,100 @@
+
+body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.canvy-layout{
+	width: 100%;
+	height: 100%;
+}
+
+/* -- library css -- */
+
+.canvy-editor {
+	position: 'absolute',
+	width: '2em',
+	height: '9em',
+	"z-index": 1,
+	display: 'block'
+}
+.ui-helper-hidden-accessible {
+	border: 0px none;
+	clip: rect(0px, 0px, 0px, 0px);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0px;
+	position: absolute;
+	width: 1px;
+}
+
+.ui-button {
+	display: inline-block;
+	position: relative;
+	padding: 0px;
+	line-height: normal;
+	margin-right: 0.1em;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	overflow: visible;
+	border: solid 1px;
+}
+
+.canvy-panel {
+	position: absolute;
+}
+
+.canvy-item {
+	position: relative;
+	display: block;
+	height: 1.5em;
+}
+
+.canvy-item:hover .handle,
+.canvy-item:hover .remove {
+	background-color: #FF0000;
+}
+
+.canvy-item .handle,
+.canvy-item .remove {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+}
+
+.canvy-item .remove{
+	right: 0;	
+}
+
+.canvy-item-name-input {
+	color: inherit;
+	background: none;
+	box-sizing: border-box;
+	border: none;
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+.canvy-item-name-input:focus {
+	background: #FFF;
+}
+
+.canvy-item .overlay {
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 2em;
+}

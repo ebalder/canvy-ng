@@ -3,14 +3,13 @@
 var ng = require('angular')
 
 ng.module('canvy', [])
-.directive('canvyLayout', function(){
+.directive('canvyLayout', function($http){
 	return {
 		template: require('../templates/canvy-layout.html'),	
 		transclude: true,
 		restrict: "EA",
 		replace: true,
 		controller: function($scope){
-			
 		},
 		link: function(scope, el, attrs){
 			

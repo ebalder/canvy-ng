@@ -23,7 +23,6 @@ ng.module('canvy')
 			$el.css({
 				"background-color": $scope.item.color
 			});
-			console.log(attrs);
 			$scope.$watch(attrs.ngActivate,
 				function(val){
 					if(val){
