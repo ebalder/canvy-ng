@@ -23,19 +23,12 @@
 			"stringify"
 		]
 	},
-	"browser": {
-		"jquery-ui": "./node_modules/jquery-ui/jquery-ui.js",
-		"sortable": "./node_modules/jquery-ui/sortable.js",
-		"draggable": "./node_modules/jquery-ui/draggable.js",
-		"resizeable": "./node_modules/jquery-ui/reziseable.js",
-		"dropable": "./node_modules/jquery-ui/dropable.js"
-	},
 	"browserify-shim": {
-		"jquery": "$",
+		"jquery": "global:$",
 		"jquery-ui": {
-			"depends": ["jquery"],
-			"exports": "jQuery"
-		}
+			"exports": "global:jQuery"
+		},
+		"angular": "global:angular"
 	},
 	"stringify": {
 		"extensions": [".html"],

@@ -1,7 +1,6 @@
 'use-strict';
 
-var ng = require('angular');
-require('../js/canvas')
+var ng = angular;
 
 ng.module('myApp', ['canvy'])
 .controller('myCanvas', function($scope, $http){

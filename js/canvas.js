@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('asdfasdf');
 var ng = require('angular')
 
 ng.module('canvy', [])
