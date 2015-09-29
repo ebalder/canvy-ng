@@ -1,8 +1,7 @@
 'use strict';
 
 var ng = require('angular')
-var $ = require('jquery')
-require('sortable')
+var $ = require('jquery-ui')
 
 ng.module('canvy')
 .directive('canvyPanel', function(){
@@ -17,6 +16,7 @@ ng.module('canvy')
 		replace: true,
 		scope: false,
 		controller: function($scope) {
+			$scope.mouseOver = false;
 		},
 		link: function($scope, el, attrs, layout){
 			var $el = $(el); //required for jqueryUI
@@ -44,6 +44,10 @@ ng.module('canvy')
 
 			$scope.removeItem = function(index){
 				delete $scope.panel.items[index];
+			}
+			$scope.newItem = function(){
+				panel.items.push({ name: 'new-item', color: 'blue'});
+
 			}
 
 		}

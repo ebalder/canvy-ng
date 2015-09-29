@@ -1,7 +1,7 @@
 'use strict';
 
 var ng = require('angular')
-var $ = ng.element = require('jquery-ui')
+var $ = require('jquery-ui')
 
 ng.module('canvy')
 .directive('canvyItem', function($timeout){
@@ -40,7 +40,6 @@ ng.module('canvy')
 
 			$scope.enter = function(ev){
 				if(ev.key == 'Enter'){
-					console.log('0');
 					$scope.editing = false;
 				}
 			};
