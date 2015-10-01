@@ -24,10 +24,10 @@ ng.module('canvy')
 			layout = $scope.$parent; //ToDo: why is layout empty?
 			var unit = layout.data.unit.map(function(curr){return curr*100});
 			el[0].panel = panel;
-			var arr = $el.sortable({
+			var arr = $('ul',$el).sortable({
 				revert: true,
 				helper: 'clone',
-				connectWith: '.canvy-panel',
+				connectWith: '.canvy-panel ul',
 			})
 			.on('sortstop', swapItem)
 			.on('sortstart', setInitialIndex);
