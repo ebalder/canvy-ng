@@ -46,7 +46,7 @@ ng.module('canvy')
 				delete $scope.panel.items[index];
 			}
 			$scope.newItem = function(){
-				panel.items.push({ name: 'new-item', color: 'blue'});
+				panel.items.push({ name: 'new-item'});
 
 			}
 

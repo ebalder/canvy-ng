@@ -167,7 +167,7 @@ ng.module('canvy')
 				delete $scope.panel.items[index];
 			}
 			$scope.newItem = function(){
-				panel.items.push({ name: 'new-item', color: 'blue'});
+				panel.items.push({ name: 'new-item'});
 
 			}
 
@@ -194,10 +194,10 @@ var item = require('./item')
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
 },{"../templates/canvy-panel.html":7,"./item":3}],5:[function(require,module,exports){
-module.exports = "<li class=\"canvy-item\" ng-init=\"editing = false\"\n\tng-dblclick=\"editing = true\"\t\n\tng-activate=\"editing\" > \n\n\t<input type=\"text\" class=\"canvy-item-name-input\"\n\t\tng-model=\"item.name\"\n\t\tng-blur=\"editing = false\"\n\t\tng-keypress=\"enter($event)\"\n\t\tdisabled>\n\t<div class=\"overlay\"> </div>\n\t<div class=\"remove\" ng-click=\"destroy()\">\n\t\tXx\t\n\t</div>\n</li>\n";
+module.exports = "<li class=\"canvy-item\" ng-init=\"editing = false\"\n\tng-dblclick=\"editing = true\"\t\n\tng-activate=\"editing\" > \n\n\t<input type=\"text\" class=\"canvy-item-name-input\"\n\t\tng-model=\"item.name\"\n\t\tng-blur=\"editing = false\"\n\t\tng-keypress=\"enter($event)\"\n\t\tdisabled>\n\t<div class=\"overlay\"> </div>\n\t<div class=\"remove\" ng-click=\"destroy()\">\n\t\tX\t\n\t</div>\n</li>\n";
 
 },{}],6:[function(require,module,exports){
-module.exports = "<div class=\"canvy-layout\">\n\t<canvy-panel ng-repeat=\"panel in data.panels\">\n\t</canvy-panel>\n\t<canvy-editor></canvy-editor> \n</div>\n";
+module.exports = "<div class=\"canvy-layout\">\n\t<canvy-panel ng-repeat=\"panel in data.panels\">\n\t</canvy-panel>\n\t<!--<canvy-editor></canvy-editor> -->\n</div>\n";
 
 },{}],7:[function(require,module,exports){
 module.exports = "<ul class=\"canvy-panel\" >\n\t<div class=\"canvy-panel-header\">{{panel.name}}</div>\n\t<canvy-item ng-repeat=\"item in panel.items\">\n\t</canvy-item>\n\t<li class=\"add-item\" ng-click=\"newItem()\">+</li>\n</ul>\n";
