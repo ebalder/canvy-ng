@@ -145,10 +145,10 @@ ng.module('canvy')
 			layout = $scope.$parent; //ToDo: why is layout empty?
 			var unit = layout.data.unit.map(function(curr){return curr*100});
 			el[0].panel = panel;
-			var arr = $el.sortable({
+			var arr = $('ul',$el).sortable({
 				revert: true,
 				helper: 'clone',
-				connectWith: '.canvy-panel',
+				connectWith: '.canvy-panel ul',
 			})
 			.on('sortstop', swapItem)
 			.on('sortstart', setInitialIndex);
@@ -200,7 +200,7 @@ module.exports = "<li class=\"canvy-item\" ng-init=\"editing = false\"\n\tng-dbl
 module.exports = "<div class=\"canvy-layout\">\n\t<canvy-panel ng-repeat=\"panel in data.panels\">\n\t</canvy-panel>\n\t<!--<canvy-editor></canvy-editor> -->\n</div>\n";
 
 },{}],7:[function(require,module,exports){
-module.exports = "<ul class=\"canvy-panel\" >\n\t<div class=\"canvy-panel-header\">{{panel.name}}</div>\n\t<canvy-item ng-repeat=\"item in panel.items\">\n\t</canvy-item>\n\t<li class=\"add-item\" ng-click=\"newItem()\">+</li>\n</ul>\n";
+module.exports = "<div class=\"canvy-panel\" >\n\t<div class=\"canvy-panel-header\">{{panel.name}}</div>\n\t<ul>\n\t\t<canvy-item ng-repeat=\"item in panel.items\">\n\t\t</canvy-item>\n\t</ul>\n\t<div class=\"add-item\" ng-click=\"newItem()\">+</div>\n</div>\n";
 
 },{}],8:[function(require,module,exports){
 module.exports = "<div>\n\t<input type=\"checkbox\" class=\"canvy-editor\" id=\"canvy-editor\" ng-checked=\"toggleEdit\"/>\n\t<label for=\"canvy-editor\">Edit</label>\n\n</div>\n";

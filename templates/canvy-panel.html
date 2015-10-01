@@ -1,6 +1,8 @@
-<ul class="canvy-panel" >
+<div class="canvy-panel" >
 	<div class="canvy-panel-header">{{panel.name}}</div>
-	<canvy-item ng-repeat="item in panel.items">
-	</canvy-item>
-	<li class="add-item" ng-click="newItem()">+</li>
-</ul>
+	<ul>
+		<canvy-item ng-repeat="item in panel.items">
+		</canvy-item>
+	</ul>
+	<div class="add-item" ng-click="newItem()">+</div>
+</div>
