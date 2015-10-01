@@ -55,11 +55,15 @@ body{
 }
 
 .canvy-panel .add-item{
-	display: block;
+	display: none;
 	width: 30%;
 	background: #F0F0F0;
 	margin: auto;
 	text-align: center;
+}
+
+.canvy-panel:hover .add-item{
+	display:block;
 }
 
 .canvy-item {
