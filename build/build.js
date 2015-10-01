@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
 'use strict';
-console.log('asdfasdf');
+
 var ng = (typeof window !== "undefined" ? window['angular'] : typeof global !== "undefined" ? global['angular'] : null)
 
 ng.module('canvy', [])
@@ -100,7 +100,6 @@ ng.module('canvy')
 
 			$scope.enter = function(ev){
 				if(ev.key == 'Enter'){
-					console.log('0');
 					$scope.editing = false;
 				}
 			};
@@ -201,7 +200,7 @@ module.exports = "<li class=\"canvy-item\" ng-init=\"editing = false\"\n\tng-dbl
 module.exports = "<div class=\"canvy-layout\">\n\t<canvy-panel ng-repeat=\"panel in data.panels\">\n\t</canvy-panel>\n\t<canvy-editor></canvy-editor> \n</div>\n";
 
 },{}],7:[function(require,module,exports){
-module.exports = "<ul class=\"canvy-panel\" >\n\t<canvy-item ng-repeat=\"item in panel.items\">\n\t</canvy-item>\n\t<li class=\"add-item\" ng-click=\"newItem()\">+</li>\n</ul>\n";
+module.exports = "<ul class=\"canvy-panel\" >\n\t<div class=\"canvy-panel-header\">{{panel.name}}</div>\n\t<canvy-item ng-repeat=\"item in panel.items\">\n\t</canvy-item>\n\t<li class=\"add-item\" ng-click=\"newItem()\">+</li>\n</ul>\n";
 
 },{}],8:[function(require,module,exports){
 module.exports = "<div>\n\t<input type=\"checkbox\" class=\"canvy-editor\" id=\"canvy-editor\" ng-checked=\"toggleEdit\"/>\n\t<label for=\"canvy-editor\">Edit</label>\n\n</div>\n";
