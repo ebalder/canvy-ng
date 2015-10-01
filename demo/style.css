@@ -47,6 +47,16 @@ body{
 
 .canvy-panel {
 	position: absolute;
+	list-style: none;
+	padding: 0.5em;
+}
+
+.canvy-panel .add-item{
+	display: block;
+	width: 30%;
+	background: #F0F0F0;
+	margin: auto;
+	text-align: center;
 }
 
 .canvy-item {
@@ -57,16 +67,20 @@ body{
 
 .canvy-item:hover .handle,
 .canvy-item:hover .remove {
-	background-color: #FF0000;
+	display: block;
 }
 
 .canvy-item .handle,
 .canvy-item .remove {
-	display: block;
+	background-color: #FF2222;
+	display: none;
 	width: 1.5em;
 	height: 1.5em;
 	z-index: 2;
 	position: absolute;
+	text-align: center;
+	vertical-align: middle;
+	text-align: middle;
 	top: 0;
 }
 
