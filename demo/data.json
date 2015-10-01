@@ -1,0 +1,113 @@
+{
+	"name": "testLayout",
+	"unit": [0.2, 0.3333],
+	"panels": [
+		{
+			"name": "Problem",
+			"upperLeft": [0, 0],
+			"area": [1, 2],
+			"items": [
+				{
+					"name": "Not enough bunnies"
+				},
+				{
+					"name": "Bunnies are expensive"
+				}
+			]
+		},
+		{
+			"name": "Solution",
+			"upperLeft": [1, 0],
+			"area": [1, 1],
+			"items": [
+				{
+					"name": "Mass bunny assembly",
+					"color": "papayawhip"
+				},
+				{
+					"name": "Equal distribution of bunnies"
+				}
+			]
+		},
+		{
+			"name": "Unique Value",
+			"upperLeft": [2, 0],
+			"area": [1, 2],
+			"items": [
+				{
+					"name": "Multicolored bunnies",
+					"color": "pink"
+				},
+				{
+					"name": "Rose Gold option",
+					"color": "pink"
+				}
+			]
+		},
+		{
+			"name": "Unfair Advantage",
+			"upperLeft": [3, 0],
+			"area": [1, 1],
+			"items": [
+				{
+					"name": "Good weather for bunnies"
+				}
+			]
+		},
+		{
+			"name": "Customer Segments",
+			"upperLeft": [4, 0],
+			"area": [1, 2],
+			"items": [
+				{
+					"name": "People who like bunnies"
+				}
+			]
+		},
+		{
+			"name": "Key Metrics",
+			"upperLeft": [1, 1],
+			"area": [1, 1],
+			"items": [
+				{
+					"name": "Bunnies per capita"
+				},
+				{
+					"name": "Cost per bunny"
+				}
+			]
+		},
+		{
+			"name": "Channels",
+			"upperLeft": [3, 1],
+			"area": [1, 1],
+			"items": [ ]
+		},
+		{
+			"name": "Cost Structure",
+			"upperLeft": [0, 2],
+			"area": [2.5, 1],
+			"items": [
+				{
+					"name": "Bunny allocation"
+				},
+				{
+					"name": "Bunny formulae"
+				},
+				{
+					"name": "Bunny assembly units"
+				}
+			]
+		},
+		{
+			"name": "Revenue Stream",
+			"upperLeft": [2.5, 2],
+			"area": [2.5, 1],
+			"items": [
+				{
+					"name": "Bunny petting business"
+				}
+			]
+		}
+	]
+}
